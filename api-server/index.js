@@ -39,8 +39,9 @@ const config = {
 }
 
 app.post('/project', async (req, res) => {
-    const { gitUrl } = req.body
-    const projectSlug = generateSlug()
+    // const { gitUrl } = req.body      //gitUrl is the url of the git repository and every time in this new url is generated then  instead of this we can use the same url and the same project will be updated
+    const { gitUrl, slug } = req.body
+    const projectSlug = slug ? slug : generateSlug()   // then set the change data to the projectSlug
 
     //spin the container with the projectSlug use npm install @aws-sdk/client-ecs
     const command = new RunTaskCommand({
