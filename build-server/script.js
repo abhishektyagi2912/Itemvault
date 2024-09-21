@@ -6,13 +6,13 @@ const mime = require('mime-types');  // it will help to get the content type of 
 const Redis = require('ioredis');
 
 
-const redis = new Redis('rediss://default:AVNS_cINJPsAsyryWoJKZ9QP@my-vercel-abhishektyagi2912-3801.h.aivencloud.com:13954')
+const redis = new Redis('')
 
 const s3Client = new S3Client({
     region: 'eu-north-1',
     credentials: {
-        accessKeyId: 'AKIAUIDV4CHNAWZZBIGZ',
-        secretAccessKey: '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'
+        accessKeyId: '',
+        secretAccessKey: ''
     }
 });
 
