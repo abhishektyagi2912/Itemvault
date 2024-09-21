@@ -5,7 +5,7 @@ const { url } = require('inspector');
 const app = express()
 const port = 8000
 
-const BASE_PATH = 'https://vercel-mine.s3.eu-north-1.amazonaws.com/__output';
+const BASE_PATH = '';
 
 const proxy = httpProxy.createProxyServer();  // create a proxy server instance4
 
