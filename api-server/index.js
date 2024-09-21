@@ -9,7 +9,7 @@ const app = express()
 app.use(express.json())
 const port = 9000
 
-const redis = new Redis('rediss://default:AVNS_cINJPsAsyryWoJKZ9QP@my-vercel-abhishektyagi2912-3801.h.aivencloud.com:13954')
+const redis = new Redis('')
 
 const io = new Server({ cors: { origin: '*' } })
 io.listen(9001, () => console.log('Socket server is running on port 9001'))
@@ -28,14 +28,14 @@ io.on('connection', (socket) => {
 const ecsClient = new ECSClient({
     region: 'eu-north-1',
     credentials: {
-        accessKeyId: 'AKIAUIDV4CHNAWZZBIGZ',
-        secretAccessKey: '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'
+        accessKeyId: '',
+        secretAccessKey: ''
     }
 })
 
 const config = {
-    CLUSTER: 'arn:aws:ecs:eu-north-1:292304982490:cluster/builder-cluster-aws',
-    TASK: 'arn:aws:ecs:eu-north-1:292304982490:task-definition/builder-task'
+    CLUSTER: '',
+    TASK: ''
 }
 
 app.post('/project', async (req, res) => {
@@ -51,8 +51,8 @@ app.post('/project', async (req, res) => {
         count: 1,
         networkConfiguration: {
             awsvpcConfiguration: {
-                subnets: ['subnet-0de689a08d9a61735', 'subnet-0871de60c8290149d', 'subnet-04edeb6fac168d84a'],
-                securityGroups: ['sg-02f94ecd4240d5e2e'],
+                subnets: ['', '', ''],
+                securityGroups: [''],
                 assignPublicIp: 'ENABLED'
             }
         },
